@@ -54,7 +54,7 @@ spec:
         # There are no ":latest" images for flux. Find the most recent
         # release or image version at https://quay.io/weaveworks/flux
         # and replace the tag here.
-        image: fluxcd/flux:1.14.2
+        image: fluxcd/flux:1.22.0
         imagePullPolicy: IfNotPresent
         resources:
           requests:
@@ -100,7 +100,9 @@ spec:
         - --ssh-keygen-dir=/var/fluxd/keygen
 
         # replace or remove the following URL
-        - --git-url=git@github.com:weaveworks/flux-get-started
+        - --git-url=git@github.com:aashrit93/gitops-tutorial.git
+        - --git-path=deploy/kubernetes
+        # tells us which path to watch
         - --git-branch=master
 
         # include these next two to connect to an "upstream" service
